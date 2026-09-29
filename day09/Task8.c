@@ -43,11 +43,13 @@ int main(){
     printf("4.Exit");
     int a;
     scanf("%d",&a);
-    if(a == 1){
+    switch (a){
+    case 1:{
         for(int i=0;i<3;i++){
              printStudent(students[i]);
         }
-    }else if(a == 2){
+        break;}
+    case 2:{
         int targetId;
         printf("Enter ID:\n");
         scanf("%d",&targetId);
@@ -57,7 +59,8 @@ int main(){
         }else{
             printStudent(students[index]);
         }
-    }else if(a == 3){
+        break;}
+    case 3:{
         int targetId;
         printf("Enter ID:\n");
         scanf("%d",&targetId);
@@ -74,13 +77,15 @@ int main(){
                 updateScore(&students[index], newScore);
                 printf("Student updated:\n");
                 printStudent(students[index]);
-}
-        }
-    }else if(a == 4){
+        }}
+        break;}
+    case 4:{
         printf("Goodbye!\n");
-    }else{
+        break;}
+    default:{
         printf("Invalid option.\n");
     }
+}
 
     return 0;
 }
